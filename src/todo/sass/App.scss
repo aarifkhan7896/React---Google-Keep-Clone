@@ -1,0 +1,108 @@
+@import "./variables";
+
+@mixin flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin font {
+  font-size: 2rem;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  background-color: $bg-color;
+  color: $primary-color;
+}
+.mainDiv {
+  box-shadow: 0px 0px 5px $rgba-color;
+  width: 40%;
+  margin: 5rem auto;
+  text-align: center;
+  border-radius: 0.5rem;
+  padding-bottom: 2rem;
+
+  input[type="text"] {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $primary-color;
+    @include font();
+    background-color: transparent;
+    color: $primary-color;
+    width: 70%;
+    padding: 0.5rem 1rem;
+  }
+
+  .today {
+    @include flex();
+    flex-wrap: wrap;
+    padding: 1rem;
+    @include font();
+  }
+
+  button {
+    @include font();
+    background-color: transparent;
+    border: 1px solid $primary-color;
+    padding: 0.5rem 1.5rem;
+    color: $primary-color;
+    cursor: pointer;
+    transition: all 0.5s;
+    margin: 1rem;
+
+    &:hover {
+      background-color: $primary-color;
+      color: $bg-color;
+    }
+  }
+
+  .card {
+    background-color: transparent;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    width: 83%;
+    margin: 1.5rem auto;
+    @include flex();
+    align-items: center;
+    transition: all 0.5s;
+
+    .notes {
+      @include font();
+      padding: 1rem;
+      border-left: 2px solid $primary-color;
+    }
+    &:hover {
+      background-color: $rgba-color;
+      color: $primary-color;
+    }
+    .deleteBtn {
+      padding-right: 1rem;
+      font-size: 1.8rem;
+
+      color: coral;
+      cursor: pointer;
+    }
+    .deleteBtn:hover {
+      color: red;
+    }
+  }
+}
+.heading {
+  padding: 2rem;
+  background-color: #39a7a7;
+  text-align: center;
+
+  p {
+    font: {
+      size: 4rem;
+      family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+  }
+}
